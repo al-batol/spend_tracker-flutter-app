@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:spend_tracker/src/core/common/constants/colors.dart';
 import 'package:spend_tracker/src/core/common/themes/light_theme.dart';
-import 'package:spend_tracker/src/core/features/onboarding/views/splash_screen.dart';
 import 'package:spend_tracker/src/core/navigation/app_routes.dart';
 import 'package:spend_tracker/src/core/navigation/route_names.dart';
+import 'package:spend_tracker/src/core/common/di/inection_container.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 

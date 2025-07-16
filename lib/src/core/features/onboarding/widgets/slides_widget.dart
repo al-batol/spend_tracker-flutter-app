@@ -40,7 +40,7 @@ class SlidesWidget extends StatelessWidget {
                     ),
                     Text(
                       onboardingList[index].subtitle,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                      style: Theme.of(context).textTheme.labelMedium,
                       textAlign: TextAlign.center,
                     ),
                   ],

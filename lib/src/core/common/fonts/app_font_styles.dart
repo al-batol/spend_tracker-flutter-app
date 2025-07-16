@@ -15,10 +15,10 @@ class AppFontStyles {
     color: Colors.black87,
   );
 
-  static const TextStyle body = TextStyle(
+  static const TextStyle labelMedium = TextStyle(
     fontSize: AppFontSizes.sm,
     fontWeight: FontWeight.normal,
-    color: AppColors.light20,
+    color: Colors.black87,
   );
 
   static const TextStyle button = TextStyle(
@@ -28,9 +28,19 @@ class AppFontStyles {
   );
   static const TextStyle caption = TextStyle(
     fontSize: AppFontSizes.xs,
-    color: Colors.grey,
+    color: Colors.black87,
+    fontWeight: FontWeight.w500,
   );
-
+  static const TextStyle displaySmall = TextStyle(
+    fontSize: AppFontSizes.sm,
+    color: AppColors.light20,
+    fontWeight: FontWeight.w500,
+  );
+  static const TextStyle titleMedium = TextStyle(
+    fontSize: AppFontSizes.md,
+    color: Colors.black87,
+    fontWeight: FontWeight.w600,
+  );
   static const TextStyle display = TextStyle(
     fontSize: AppFontSizes.xxl,
     fontWeight: FontWeight.bold,

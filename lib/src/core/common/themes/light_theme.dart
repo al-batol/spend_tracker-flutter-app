@@ -13,9 +13,32 @@ class LightTheme {
       displayLarge: AppFontStyles.display,
       headlineMedium: AppFontStyles.heading,
       titleMedium: AppFontStyles.subtitle,
-      bodyLarge: AppFontStyles.body,
       bodySmall: AppFontStyles.caption,
+      labelMedium: AppFontStyles.labelMedium,
       bodyMedium: AppFontStyles.button,
+      displaySmall: AppFontStyles.displaySmall,
+      displayMedium: AppFontStyles.titleMedium,
+    ),
+    checkboxTheme: CheckboxThemeData(
+      side: BorderSide(width: 0.5, color: AppColors.primaryColor),
+      shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(2)),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      labelStyle: AppFontStyles.displaySmall,
+      suffixIconColor: AppColors.light20,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        // borderSide: BorderSide(color: AppColors.inputBg),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: AppColors.inputBg),
+      ),
+      errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: AppColors.inputBg),
+      ),
     ),
   );
 }
