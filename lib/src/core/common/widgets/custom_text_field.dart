@@ -9,6 +9,7 @@ class CustomTextField extends StatelessWidget {
   final bool? isHidden;
   final bool? isEnabled;
   final FormFieldValidator<String>? validator;
+  final String? errorText;
   const CustomTextField({
     super.key,
     required this.controller,
@@ -17,6 +18,7 @@ class CustomTextField extends StatelessWidget {
     required this.validator,
     this.isHidden = false,
     this.isEnabled = true,
+    this.errorText,
   });
 
   @override
@@ -27,6 +29,7 @@ class CustomTextField extends StatelessWidget {
       enabled: isEnabled,
       decoration: InputDecoration(
         labelText: hintText,
+        errorText: errorText,
         suffixIcon:
             !isPassword!
                 ? null

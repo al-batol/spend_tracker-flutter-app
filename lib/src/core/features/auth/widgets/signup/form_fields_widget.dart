@@ -21,12 +21,15 @@ class FormFieldsWidget extends StatelessWidget {
       children: [
         BlocBuilder<AuthCubit, AuthState>(
           buildWhen:
-              (previous, current) => previous.isEnabled != current.isEnabled,
+              (previous, current) =>
+                  (previous.status == AuthStatus.loading) !=
+                  (current.status == AuthStatus.loading),
           builder: (context, state) {
             return CustomTextField(
               controller: nameCtr,
               hintText: "Name",
-              isEnabled: state.isEnabled,
+              errorText: state.errors['name']?.join(', '),
+              isEnabled: state.status != AuthStatus.loading,
               validator: (value) {
                 if (value == null || value.trim().isEmpty) {
                   return 'Name is required';
@@ -38,17 +41,19 @@ class FormFieldsWidget extends StatelessWidget {
         ),
         BlocBuilder<AuthCubit, AuthState>(
           buildWhen:
-              (previous, current) => previous.isEnabled != current.isEnabled,
+              (previous, current) =>
+                  (previous.status == AuthStatus.loading) !=
+                  (current.status == AuthStatus.loading),
           builder: (context, state) {
             return CustomTextField(
               controller: emailCtr,
               hintText: "Email",
-              isEnabled: state.isEnabled,
+              errorText: state.errors['email']?.join(', '),
+              isEnabled: state.status != AuthStatus.loading,
               validator: (value) {
                 if (value == null || value.trim().isEmpty) {
                   return 'Email is required';
                 }
-                // Simple email pattern check
                 final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
                 if (!emailRegex.hasMatch(value.trim())) {
                   return 'Enter a valid email';
@@ -61,15 +66,17 @@ class FormFieldsWidget extends StatelessWidget {
         BlocBuilder<AuthCubit, AuthState>(
           buildWhen:
               (previous, current) =>
-                  previous.isEnabled != current.isEnabled ||
+                  (previous.status == AuthStatus.loading) !=
+                      (current.status == AuthStatus.loading) ||
                   previous.isPassHidden != current.isPassHidden,
           builder: (context, state) {
             return CustomTextField(
               hintText: "Password",
+              errorText: state.errors['password']?.join(', '),
               controller: passwordCtr,
               isPassword: true,
               isHidden: state.isPassHidden,
-              isEnabled: state.isEnabled,
+              isEnabled: state.status != AuthStatus.loading,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Password is required';

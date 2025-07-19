@@ -4,8 +4,8 @@ import 'package:spend_tracker/src/core/common/widgets/custom_button.dart';
 import 'package:spend_tracker/src/core/features/auth/cubit/auth_cubit.dart';
 
 class SignupFooterButtons extends StatelessWidget {
-  final GlobalKey<FormState> formKey;
-  const SignupFooterButtons({super.key, required this.formKey});
+  final VoidCallback onSignUp;
+  const SignupFooterButtons({super.key, required this.onSignUp});
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +14,19 @@ class SignupFooterButtons extends StatelessWidget {
         BlocBuilder<AuthCubit, AuthState>(
           buildWhen:
               (previous, current) =>
-                  previous.isSigningUp != current.isSigningUp,
+                  (previous.status == AuthStatus.loading) !=
+                  (current.status == AuthStatus.loading),
           builder: (context, state) {
             return CustomButton(
               name: 'Sign up',
-              isLoading: state.isSigningUp,
-              voidCallback: () {
-                if (formKey.currentState!.validate()) {
-                  context.read<AuthCubit>().signUp();
-                }
-              },
+              isLoading: state.status == AuthStatus.loading,
+              voidCallback: onSignUp,
             );
           },
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 15),
         Text('Or With', style: Theme.of(context).textTheme.displaySmall),
-        const SizedBox(height: 10),
+        const SizedBox(height: 15),
         CustomButton(
           name: 'Sign Up With Google',
           imagePath: 'assets/images/google.png',
@@ -41,7 +38,9 @@ class SignupFooterButtons extends StatelessWidget {
           children: [
             Text(
               'Already have an account? ',
-              style: Theme.of(context).textTheme.bodySmall,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).disabledColor,
+              ),
             ),
             TextButton(
               onPressed: () {},

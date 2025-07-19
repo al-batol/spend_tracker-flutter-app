@@ -19,10 +19,9 @@ class LightTheme {
       displaySmall: AppFontStyles.displaySmall,
       displayMedium: AppFontStyles.titleMedium,
     ),
-    checkboxTheme: CheckboxThemeData(
-      side: BorderSide(width: 0.5, color: AppColors.primaryColor),
-      shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(2)),
-    ),
+    // checkboxTheme: CheckboxThemeData(
+    //
+    // ),
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: AppFontStyles.displaySmall,
       suffixIconColor: AppColors.light20,
