@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spend_tracker/src/core/common/widgets/custom_button.dart';
 import 'package:spend_tracker/src/core/features/auth/cubit/auth_cubit.dart';
 
-class SignupFooterButtons extends StatelessWidget {
+class SignupFooterButtonsWidget extends StatelessWidget {
   final VoidCallback onSignUp;
-  const SignupFooterButtons({super.key, required this.onSignUp});
+  const SignupFooterButtonsWidget({super.key, required this.onSignUp});
 
   @override
   Widget build(BuildContext context) {

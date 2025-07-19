@@ -5,7 +5,7 @@ import 'package:spend_tracker/src/core/common/utils/helper.dart';
 import 'package:spend_tracker/src/core/features/auth/cubit/auth_cubit.dart';
 import 'package:spend_tracker/src/core/features/auth/widgets/signup/form_fields_widget.dart';
 import 'package:spend_tracker/src/core/features/auth/widgets/signup/privacy_checkbox_widget.dart';
-import 'package:spend_tracker/src/core/features/auth/widgets/signup/signup_footer_buttons.dart';
+import 'package:spend_tracker/src/core/features/auth/widgets/signup/signup_footer_buttons_widget.dart';
 import 'package:spend_tracker/src/core/navigation/route_names.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -74,7 +74,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   passwordCtr: passwordCtr,
                 ),
                 PrivacyCheckboxWidget(),
-                SignupFooterButtons(
+                SignupFooterButtonsWidget(
                   onSignUp: () {
                     if (formKey.currentState!.validate()) {
                       context.read<AuthCubit>().signUp(
