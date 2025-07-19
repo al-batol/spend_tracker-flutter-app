@@ -5,7 +5,7 @@ class AppDimensions {
   static const double paddingMd = 24.0;
   static const double paddingSm = 16.0;
   static const double paddingXSm = 12.0;
-  static const double paddingXxsm = 8.0;
+  static const double paddingXxsm = 6.0;
 
   static const double iconSize = 28.0;
 }

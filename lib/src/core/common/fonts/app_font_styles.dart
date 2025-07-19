@@ -3,7 +3,13 @@ import 'package:spend_tracker/src/core/common/constants/colors.dart';
 import 'package:spend_tracker/src/core/common/fonts/app_font_sizes.dart';
 
 class AppFontStyles {
-  static const TextStyle heading = TextStyle(
+  static const TextStyle heading1 = TextStyle(
+    fontSize: AppFontSizes.xlg,
+    fontWeight: FontWeight.w500,
+    color: Colors.black,
+  );
+
+  static const TextStyle heading2 = TextStyle(
     fontSize: AppFontSizes.lg,
     fontWeight: FontWeight.w600,
     color: Colors.black,

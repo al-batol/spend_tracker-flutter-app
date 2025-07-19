@@ -11,7 +11,8 @@ class LightTheme {
     disabledColor: AppColors.light20,
     textTheme: TextTheme(
       displayLarge: AppFontStyles.display,
-      headlineMedium: AppFontStyles.heading,
+      headlineMedium: AppFontStyles.heading2,
+      headlineLarge: AppFontStyles.heading1,
       titleMedium: AppFontStyles.subtitle,
       bodySmall: AppFontStyles.caption,
       labelMedium: AppFontStyles.labelMedium,
